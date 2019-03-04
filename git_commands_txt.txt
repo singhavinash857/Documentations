@@ -1,0 +1,907 @@
+GIT COMMANDS
+for getting the git version installed :::::::
+ADMIN@ADMIN-PC MINGW64 /
+$ git --version
+git version 2.21.0.windows.1
+
+
+Checking who is checking to the svn and changing or developing the code
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+credential.helper=manager
+core.editor="D:\\Setups\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+gui.recentrepo=D:/Git_Repository
+user.email=avinash.singh@transformedge.com
+user.name=Avinash Singh
+
+
+if not then execute the commands and
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git config --global user.name "Avinash Singh Kachhwaha"
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git config --global user.email avinash.singh@transformedge.com
+
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+credential.helper=manager
+core.editor="D:\\Setups\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+gui.recentrepo=D:/Git_Repository
+user.email=avinash.singh@transformedge.com
+user.name=Avinash Singh Kachhwaha
+
+
+Need  Help ??
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git help config
+
+
+ADMIN@ADMIN-PC MINGW64 /
+$ git config --help
+Initialize a repository
+ADMIN@ADMIN-PC MINGW64 /
+$ cd d:
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ mkdir Local-Repo
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd Local-Repo/
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo
+$ pwd
+/d/Local-Repo
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo
+$ ls
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo
+$ ls -la
+total 28
+drwxr-xr-x 1 ADMIN 197121 0 Mar  4 15:45 ./
+drwxr-xr-x 1 ADMIN 197121 0 Mar  4 15:45 ../
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo
+$ git init
+Initialized empty Git repository in D:/Local-Repo/.git/
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ ls -la
+total 32
+drwxr-xr-x 1 ADMIN 197121 0 Mar  4 15:46 ./
+drwxr-xr-x 1 ADMIN 197121 0 Mar  4 15:45 ../
+drwxr-xr-x 1 ADMIN 197121 0 Mar  4 15:46 .git/
+
+
+Paste some file to the repo or may be have you local code in this repository and then execute the commands
+
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ ls -la
+total 324
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 15:46  ./
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 15:45  ../
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 15:46  .git/
+-rw-r--r-- 1 ADMIN 197121  18632 Mar  4 15:46 'GIT COMMANDS.docx'
+-rw-r--r-- 1 ADMIN 197121 273826 Mar  4 15:11 'React Js Documentation.docx'
+
+
+Before first Commit please verify the changes using commands
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GIT COMMANDS.docx
+        React Js Documentation.docx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+
+Add files to statging area
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git add -A
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   GIT COMMANDS.docx
+        new file:   React Js Documentation.docx
+
+Remove Files from staging area
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git reset React\ Js\ Documentation.docx
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   GIT COMMANDS.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        React Js Documentation.docx
+
+First Commit
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git add -A
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   GIT COMMANDS.docx
+        new file:   React Js Documentation.docx
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git commit -m "This is my first commit"
+[master (root-commit) d9c3af3] This is my first commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 GIT COMMANDS.docx
+ create mode 100644 React Js Documentation.docx
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Checking who has commited code
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git log
+commit d9c3af33f78262be32b199db44821918a4ca1c32 (HEAD -> master)
+Author: Avinash Singh Kachhwaha <avinash.singh@transformedge.com>
+Date:   Mon Mar 4 16:00:50 2019 +0530
+
+    This is my first commit
+
+
+Adding  a Remote Repository
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote add origin https://github.com/singhavinash857/Documentations
+fatal: remote origin already exists.
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote –v
+
+origin  https://github.com/singhavinash857/test_repository.git (fetch)
+origin  https://github.com/singhavinash857/test_repository.git (push)
+
+
+If by maistake added another repository and want to remove
+
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote rm origin
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote -v
+
+Add your required Repository 
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote -v
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote add origin https://github.com/singhavinash857/Documentations
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git remote -v
+origin  https://github.com/singhavinash857/Documentations (fetch)
+origin  https://github.com/singhavinash857/Documentations (push)
+
+
+Change any code file data and then check the below command
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   React Js Documentation.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+checking what changed you have done into the file.
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git diff
+diff --git a/React Js Documentation.docx b/React Js Documentation.docx
+index b5ec167..be5b928 100644
+Binary files a/React Js Documentation.docx and b/React Js Documentation.docx differ
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git add -A
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   React Js Documentation.docx
+
+
+commiting you changes to staging
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git commit -m "adding files to remote repo"
+[master 1847451] adding files to remote repo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+Before pushing the data to your remote branch neccessory to pull first from the remote to your branch so that you can get the other developers changes in the remote as well
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git pull origin master
+fatal: couldn't find remote ref master
+
+ADMIN@ADMIN-PC MINGW64 /d/Local-Repo (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 269.06 KiB | 13.45 MiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/singhavinash857/Documentations
+ * [new branch]      master -> master
+
+
+ 
+
+Clone your repository
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd Cloned-Repo/
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo
+$ pwd
+/d/Cloned-Repo
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo
+
+
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo
+$ git clone https://github.com/singhavinash857/Documentations
+Cloning into 'Documentations'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 3), reused 7 (delta 3), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo
+$ ls
+Documentations/
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo
+$ cd Documentations/
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ ls
+'GIT COMMANDS.docx'  'React Js Documentation.docx'
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ ls -ltra
+total 296
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 16:48  ../
+-rw-r--r-- 1 ADMIN 197121  18632 Mar  4 16:48 'GIT COMMANDS.docx'
+-rw-r--r-- 1 ADMIN 197121 271616 Mar  4 16:48 'React Js Documentation.docx'
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 16:48  ./
+drwxr-xr-x 1 ADMIN 197121      0 Mar  4 16:48  .git/
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch
+* master
+Create branch for your desired features
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch my--branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch
+* master
+  my—branch
+
+how to delete a branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -d my--branch
+Deleted branch my--branch (was 1847451).
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch
+* master
+
+Create and Checkout the branch
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch my-temp-branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -a
+* master
+  my-temp-branch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git checkout my-temp-branch
+Switched to branch 'my-temp-branch'
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git branch -a
+  master
+* my-temp-branch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+Now push your changed code to the origin
+:: Change you code into the file  then execute the commands ::
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git status
+On branch my-temp-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   React Js Documentation.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ~$act Js Documentation.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Commiting the code to the local branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git add -A
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git status
+On branch my-temp-branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   React Js Documentation.docx
+
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git commit -m "second commit and changed the heading in the file"
+[my-temp-branch d07d063] second commit and changed the heading in the file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+Push you local branch code to the remote repository (For unit testing and UAT so that you can verify that all thing are working fine before merging your branch to master)
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git push -u origin my-temp-branch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 14.40 KiB | 2.88 MiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'my-temp-branch' on GitHub by visiting:
+remote:      https://github.com/singhavinash857/Documentations/pull/new/my-temp-branch
+remote:
+To https://github.com/singhavinash857/Documentations
+ * [new branch]      my-temp-branch -> my-temp-branch
+Branch 'my-temp-branch' set up to track remote branch 'my-temp-branch' from 'origin'.
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git branch -a
+  master
+* my-temp-branch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/my-temp-branch
+
+After pushing code from your branch to remote branch merge the branch to master 
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (my-temp-branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -a
+* master
+  my-temp-branch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/my-temp-branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git pull origin master
+From https://github.com/singhavinash857/Documentations
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+ ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch --merged
+* master
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git merge my-temp-branch
+Updating 1847451..d07d063
+Fast-forward
+ React Js Documentation.docx | Bin 271616 -> 271766 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/singhavinash857/Documentations
+   1847451..d07d063  master -> master
+
+
+
+
+Delete a branch now
+Check first everything merged or not
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch --merged
+* master
+  my-temp-branch
+
+now delete the branch
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -d my-temp-branch
+Deleted branch my-temp-branch (was d07d063).
+
+You can see the branch is still in remote repository
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/my-temp-branch
+
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git push origin --delete my-temp-branch
+To https://github.com/singhavinash857/Documentations
+ - [deleted]         my-temp-branch
+
+ADMIN@ADMIN-PC MINGW64 /d/Cloned-Repo/Documentations (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+
+
+
+
+
+
+
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository
+$ git init
+Initialized empty Git repository in D:/test_repository/.git/
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ ls -ltr
+total 0
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ ls -ltrs
+total 0
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ ls -ltra
+total 32
+drwxr-xr-x 1 ADMIN 197121 0 Mar  3 12:21 ../
+drwxr-xr-x 1 ADMIN 197121 0 Mar  3 12:22 ./
+drwxr-xr-x 1 ADMIN 197121 0 Mar  3 12:22 .git/
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ nano abc.text
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ ls -ltra
+total 33
+drwxr-xr-x 1 ADMIN 197121  0 Mar  3 12:21 ../
+drwxr-xr-x 1 ADMIN 197121  0 Mar  3 12:22 .git/
+-rw-r--r-- 1 ADMIN 197121 20 Mar  3 12:24 abc.text
+drwxr-xr-x 1 ADMIN 197121  0 Mar  3 12:24 ./
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git add .
+warning: LF will be replaced by CRLF in abc.text.
+The file will have its original line endings in your working directory
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   abc.text
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ nano abc.text
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   abc.text
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.text
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ nano avi.text
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ ls
+abc.text
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ nano avi.txt
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   abc.text
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.text
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        avi.txt
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git add .
+warning: LF will be replaced by CRLF in abc.text.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in avi.txt.
+The file will have its original line endings in your working directory
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   abc.text
+        new file:   avi.txt
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git commit -m "this is my first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ADMIN@ADMIN-PC.(none)')
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git config --global user.email "avinash.singh@transformedge.com"
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git config --global user.name "Avinash Singh"
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git commit -m "this is my first commit"
+[master (root-commit) ad25f06] this is my first commit
+ 2 files changed, 3 insertions(+)
+ create mode 100644 abc.text
+ create mode 100644 avi.txt
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git remote add origin https://github.com/singhavinash857/test_repository.git
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git push -u origin master
+fatal: TaskCanceledException encountered.
+   A task was canceled.
+Username for 'https://github.com':
+singhavinash857error: unable to read askpass response from 'C:/Program Files/Git/mingw64/libexec/git-core/git-gui--askpass'
+Password for 'https://@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/singhavinash857/test_repository.git/'
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git push -u origin master
+fatal: TaskCanceledException encountered.
+   A task was canceled.
+Username for 'https://github.com': singhavinash857
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 310 bytes | 310.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/singhavinash857/test_repository.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ nano avi.txt
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   avi.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git add .
+warning: LF will be replaced by CRLF in avi.txt.
+The file will have its original line endings in your working directory
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   avi.txt
+
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git commit -m "second commit"
+[master f1382aa] second commit
+ 1 file changed, 2 insertions(+)
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ git push
+fatal: TaskCanceledException encountered.
+   A task was canceled.
+Username for 'https://github.com': singhavinash857
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/singhavinash857/test_repository.git
+   ad25f06..f1382aa  master -> master
+
+ADMIN@ADMIN-PC MINGW64 /d/test_repository (master)
+$ cd ..
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ pwd
+/d
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ git clone https://github.com/sushildangi/the_venue.git the_venue
+Cloning into 'the_venue'...
+remote: Enumerating objects: 59, done.
+remote: Counting objects: 100% (59/59), done.
+remote: Compressing objects: 100% (52/52), done.
+remote: Total 59 (delta 3), reused 59 (delta 3), pack-reused 0
+Unpacking objects: 100% (59/59), done.
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd
+
+ADMIN@ADMIN-PC MINGW64 ~
+$ cd d:
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ pwd
+/d
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd the_venue/
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ ls
+package.json  public/  README.md  src/  yarn.lock
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ git branch
+* master
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ git brach --all
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ git branch --all
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/ADMIN/.ssh/id_rsa):
+Created directory '/c/Users/ADMIN/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/ADMIN/.ssh/id_rsa.
+Your public key has been saved in /c/Users/ADMIN/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:rOwVLk/4bPG9heCBQiv5gG4TULeQMGMVpPIOuP9NgMQ ADMIN@ADMIN-PC
+The key's randomart image is:
++---[RSA 2048]----+
+|+o==o            |
+|.=oo .           |
+|o.E . .          |
+|o+ o o o .       |
+|o = = o S o      |
+| = . * =.o o .   |
+|. =   B +o... .  |
+| o . + B. . ..   |
+|  ... o.+   ..   |
++----[SHA256]-----+
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ cat ^C
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ cat /c/Users/ADMIN/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC33s9vB1qlSwxR5VmVTkm90fIghO1GkgBnDjKBow+U3K9dPLcoUd7AIncdCy42Fcu6EtonYQqaNxcgqvQ4W5TjRevrAo9u80x+C54fRijmg2cZ3crLOC30pUx4v2CX+v8RFAgtGZ/j+mht2n2lF9U0S+M5v/WFm85OS7wY65Yqs2dYfoy5FVdDZmLhaPfeA61CTViFHtmfNs2b0PfiX98xA+ZJZULthFxFqQZ9nAPLWGzFuYol7pH1W/LeFJ/IkFCxxs4Q6ShXaGOcS9oRX4dLg4BA6CjE4jSg/yCGJq2l4OO/EBCVSpdMVxaNeKRQEbd5GFrjpVrX7gFHgBn/0+aX ADMIN@ADMIN-PC
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ pwd
+/d/the_venue
+
+ADMIN@ADMIN-PC MINGW64 /d/the_venue (master)
+$ cd ..
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ pwd
+/d
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ git clone https://github.com/sushildangi/RetailBanking.git Retial_Banking
+Cloning into 'Retial_Banking'...
+remote: Enumerating objects: 521, done.
+remote: Total 521 (delta 0), reused 0 (delta 0), pack-reused 521
+Receiving objects: 100% (521/521), 1.34 MiB | 171.00 KiB/s, done.
+Resolving deltas: 100% (194/194), done.
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ pwd
+/d
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd Re
+REACT_LEARNING/ Retial_Banking/
+
+ADMIN@ADMIN-PC MINGW64 /d
+$ cd Retial_Banking/
+
+ADMIN@ADMIN-PC MINGW64 /d/Retial_Banking (master)
+$ ls
+_config.yml  mvnw*  mvnw.cmd  pom.xml  README.md  src/
+
+ADMIN@ADMIN-PC MINGW64 /d/Retial_Banking (master)
+$
